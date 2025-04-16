@@ -11,13 +11,19 @@ import { Product } from './entities/product.entity';
     UserModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '127.0.0.1',
+      host: 'localhost',
       port: 3307,
       username: 'root',
       password: '040405@Nac',
       database: 'template_nestjs',
       entities: [User, Product],
       synchronize: true,
+      retryAttempts: 3,
+      retryDelay: 3000,
+      extra: {
+        connectionLimit: 10,
+        connectTimeout: 10000
+      }
     }),
     ProductsModule,
   ],
