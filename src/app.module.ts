@@ -16,12 +16,10 @@ configDotenv()
       url: process.env.DATABASE_URL,
       entities: [User, Product],
       synchronize: true,
-      retryAttempts: 3,
-      retryDelay: 3000,
       ssl: true,
       extra: {
         connectionLimit: 10,
-        connectTimeout: 10000,
+        connectTimeout: 1000,
         ssl: {
           rejectUnauthorized: false
         }
