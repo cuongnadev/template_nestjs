@@ -31,7 +31,7 @@ export class UserController {
     return this.userService.getUser(+id);
   }
 
-  @Post()
+  @Post("/create")
   create(@Body() userData: Partial<User>): Promise<User | null> {
     return this.userService.create(userData);
   }
