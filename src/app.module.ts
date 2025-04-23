@@ -18,8 +18,6 @@ configDotenv()
       synchronize: true,
       ssl: true,
       extra: {
-        connectionLimit: 10,
-        connectTimeout: 1000,
         ssl: {
           rejectUnauthorized: false
         }
